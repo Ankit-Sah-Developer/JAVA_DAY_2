@@ -1,0 +1,171 @@
+** database contsweek;
+
+Question1:
+
+   i)	Create Table Person(
+   	id int PRIMARY KEY,
+   	email varchar(25));
+
+  ii)	Insert Into Person Values
+	(1,'a@b.com'),
+	(2,'c@d.com'),
+	(3,'a@b.com');
+
+Query : Select email from person Group By Email HAVING COUNT(email) > 1;
+
+--------------
+> Question 2 <
+--------------
+
+   i)	CREATE TABLE Worker (
+	WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      FIRST_NAME CHAR(25),
+      LAST_NAME CHAR(25),
+      SALARY INT(15),
+      JOINING_DATE DATETIME,
+      DEPARTMENT CHAR(25)
+         );
+		
+  ii)	INSERT INTO Worker
+	(WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+	(001, 'Monika', 'Arora', 100000, '14-02-20 09.00.00', 'HR'),
+	(002, 'Niharika', 'Verma', 80000, '14-06-11 09.00.00', 'Admin'),
+	(003, 'Vishal', 'Singhal', 300000, '14-02-20 09.00.00', 'HR'),
+	(004, 'Amitabh', 'Singh', 500000, '14-02-20 09.00.00', 'Admin'),
+	(005, 'Vivek', 'Bhati', 500000, '14-06-11 09.00.00', 'Admin'),
+	(006, 'Vipul', 'Diwan', 200000, '14-06-11 09.00.00', 'Account'),
+	(007, 'Satish', 'Kumar', 75000, '14-01-20 09.00.00', 'Account'),
+	(008, 'Geetika', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin');
+
+ iii)	CREATE TABLE Bonus (
+	WORKER_REF_ID INT,
+	BONUS_AMOUNT INT(10),
+	BONUS_DATE DATETIME,
+	FOREIGN KEY (WORKER_REF_ID)
+	REFERENCES Worker(WORKER_ID)
+	ON DELETE CASCADE
+	);
+
+  iv)	INSERT INTO Bonus
+	(WORKER_REF_ID, BONUS_AMOUNT, BONUS_DATE) VALUES
+	(001, 5000, '16-02-20'),
+	(002, 3000, '16-06-11'),
+	(003, 4000, '16-02-20'),
+	(001, 4500, '16-02-20'),
+	(002, 3500, '16-06-11');
+
+   v)	CREATE TABLE Title (
+	WORKER_REF_ID INT,
+	WORKER_TITLE CHAR(25),
+	AFFECTED_FROM DATETIME,
+	FOREIGN KEY (WORKER_REF_ID)
+	REFERENCES Worker(WORKER_ID)
+	ON DELETE CASCADE
+	);
+
+  vi)	INSERT INTO Title
+	(WORKER_REF_ID, WORKER_TITLE, AFFECTED_FROM) VALUES
+	(001, 'Manager', '2016-02-20 00:00:00'),
+	(002, 'Executive', '2016-06-11 00:00:00'),
+	(008, 'Executive', '2016-06-11 00:00:00'),
+	(005, 'Manager', '2016-06-11 00:00:00'),
+	(004, 'Asst. Manager', '2016-06-11 00:00:00'),
+	(007, 'Executive', '2016-06-11 00:00:00'),
+	(006, 'Lead', '2016-06-11 00:00:00'),
+	(003, 'Lead', '2016-06-11 00:00:00');
+
+1. Write an SQL query to show the second highest salary from a Worker table:-
+-----------------------------------------------------------------------------
+
+	Query: SELECT MAX(SALARY) FROM Worker WHERE SALARY < (SELECT MAX(SALARY) FROM Worker);
+
+2. Write an SQL query to determine the 5 highest salary from a Worker table:-
+-----------------------------------------------------------------------------
+
+	Query: Select SALARY from worker ORDER BY SALARY DESC LIMIT 4,1;
+
+3. Write an SQL query to show only even rows from a Worker table:-
+------------------------------------------------------------------
+
+	Query: Select * from Worker where MOD(WORKER_ID,2) = 0;
+
+4. Write an SQL query to fetch the no. of workers for each department in the descending order from the Worker table:-
+---------------------------------------------------------------------------------------------------------------------
+	
+	Query: Select COUNT(WORKER_ID) workers,DEPARTMENT from Worker GROUP BY DEPARTMENT ORDER BY COUNT(WORKER_ID) DESC;
+
+5. Write an SQL query to fetch the list of employees with the same salary from the Worker table:-
+-------------------------------------------------------------------------------------------------
+
+	Query: SELECT w.FIRST_NAME,w.SALARY from worker w, worker w2  where w.salary = w2.salary and w.FIRST_NAME != w2.FIRST_NAME;
+
+
+
+--------------
+> Question 3 <
+--------------
+
+i) Table - EmployeeDetails:-
+	
+	Create Table EmployeeDetails(
+	EmpId INT NOT NULL PRIMARY KEY,
+	FullName varchar(25),
+	ManagerId INT,
+	DateOfJoining DATE,
+	City varchar(25)
+	);
+
+ii) Table - EmployeeSalary:-
+
+	Create Table EmployeeSalary(
+	EmpId INT,
+	Project varchar(3),
+	Salary INT,
+	Variable INT,
+	FOREIGN KEY(EmpId) REFERENCES EmployeeDetails(EmpId)
+	);
+
+iii) 	INSERT INTO EmployeeDetails VALUES
+	(121, 'John Snow',321,'2014-01-31','Toronto'),
+	(321, 'Walter White',986,'2015-01-30','California'),
+	(421, 'Kuldeep Rana',876,'2016-11-27','New Delhi');
+
+iv) 	INSERT INTO EmployeeSalary VALUES
+	(121,'P1',8000,500),
+	(321,'P2',10000,1000),
+	(421,'P1',12000,0);
+
+
+1. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ending with any sequence of characters:-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Query: Select * from EmployeeDetails where FullName Like '__hn%';
+
+2. Write an SQL query to fetch common records between two tables:-
+------------------------------------------------------------------
+
+	Query: SELECT * FROM EmployeeDetails ed INNER JOIN EmployeeSalary es ON ed.EmpId = es.EmpId;
+
+3. Write an SQL query to fetch records that are present in one table but not in another table:-
+-----------------------------------------------------------------------------------------------
+	
+	Query: SELECT * FROM EmployeeDetails ed LEFT JOIN EmployeeSalary es ON ed.EmpId = es.EmpId;
+
+4. Write an SQL query to find the maximum, minimum, and average salary of the employees:-
+-----------------------------------------------------------------------------------------
+
+	Query: Select Min(Salary) as MinSal, Max(Salary) as MaxSal, Avg(Salary) as AvgSal From EmployeeSalary;
+
+5. Fetch all the employees who are not working on any project:-
+---------------------------------------------------------------
+
+	Query: Select ed.EmpId,FullName from EmployeeDetails ed INNER JOIN EmployeeSalary es ON ed.EmpId = es.EmpId Where Project = null;
+
+
+
+
+
+
+
+
+

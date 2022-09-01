@@ -1,0 +1,174 @@
+** database contsweek;
+
+1. Create the following table according to the following information:-
+----------------------------------------------------------------------
+
+i) Table name- DEPOSIT
+
+	Create Table DEPOSIT(
+	ACTNO VARCHAR(25),
+	CNAME VARCHAR(20),
+	BNAME VARCHAR(20),
+	AMOUNT INT,
+	ADATE DATE);
+
+ii) Table name-BRANCH
+	
+	Create Table BRANCH(
+	BNAME VARCHAR(20),
+	CITY VARCHAR(20)
+	);
+
+iii) Table name-CUSTOMER
+	
+	Create Table CUSTOMER(
+	CNAME VARCHAR(20),
+	CITY VARCHAR(20)
+	);
+
+v) Table name-BORROW
+
+	Create Table BORROW(
+	LOANNO VARCHAR(5),
+	CNAME VARCHAR(20),
+	BNAME VARCHAR(20),
+	AMOUNT INT
+	);
+
+
+2. Describe the tables which are already created:-
+--------------------------------------------------
+
+   Query : desc DEPOSIT; desc BRANCH; desc CUSTOMER; desc BORROW;
+
+
+3. Insert the data as for the following:-
+-----------------------------------------
+
+i) DEPOSIT:
+
+	Insert Into DEPOSIT Values
+	('100','ANIL','VRCE',1000,'1995-03-01'),
+	('101','SUNIL','MGROAD',5000,'1996-01-04'),
+	('102','RAHUL','KAROLBAGH',3500,'1995-11-17'),
+	('103','MADHURI','CHANDNI',1200,'1995-12-17'),
+	('104','PRAMOD','MGROAD',3000,'1996-03-27'),
+	('105','SANDIP','KAROLBAGH',2000,'1996-03-31');
+	
+ii) BRANCH: 
+	
+	Insert Into BRANCH Values
+	('VRCE','NAGPUR'),
+	('KAROLBAGH','DELHI'),
+	('CHANDNI','DELHI'),
+	('MGROAD','BANGALORE');
+
+
+iii) CUSTOMER:
+	
+	Insert Into CUSTOMER Values
+	('ANIL','CALCUTA'),
+	('RAHUL','BARODA'),
+	('MADHURI','NAGPUR'),
+	('PRAMOD','NAGPUR'),
+	('SUNIL','DELHI');
+
+
+iv) BORROW:
+	
+	Insert Into BORROW Values
+	('201','ANIL','VRCE',1000),
+	('206','RAHUL','KAROLBAGH',5000),
+	('311','SUNIL','MGROAD',3000),
+	('321','MADHURI','CHANDNI',2000),
+	('375','PRAMOD','MGROAD',8000);
+
+4.Retrieve all the records from the table BORROW where amount in between 2000 and 3000:-
+----------------------------------------------------------------------------------------
+
+	Query: Select * From BORROW Where AMOUNT Between 2000 AND 3000;
+
+5. Retrieve the details from the table DEPOSIT:-
+----------------------------------------------
+	
+	Query: Select * From DEPOSIT;
+
+6. Retrieve the customer name, account no of DEPOSIT:-
+-----------------------------------------------------
+
+	Query: Select ACTNO,CNAME From DEPOSIT;
+
+7. Retrieve the name of the customer living in NAGPUR:-
+-------------------------------------------------------
+
+	Query: Select CNAME From CUSTOMER Where CITY = 'NAGPUR';
+
+8. Retrieve the name of the customers who opened account after 17-NOV-95:-
+--------------------------------------------------------------------------
+
+	Query: Select CNAME From DEPOSIT Where ADATE > '1995-11-17';
+
+9. Retrieve the account number and amount of the customer having account opened between 01-12-95 and 01-06.96.:-
+----------------------------------------------------------------------------------------------------------------
+
+	Query: Select CNAME,AMOUNT From DEPOSIT Where ADATE Between '1995-12-01' AND '1996-06-01';
+
+10. Retrieve all the records from the table DEPOSIT where CNAME begins with C:-
+----------------------------------------------------------------------------------------------------------------
+
+	Query: Select * From DEPOSIT Where CNAME LIKE 'C%';
+
+11. Retrieve all the records from the table BORROW where 2nd character of CNAME is U:-
+--------------------------------------------------------------------------------------
+	
+	Query: Select * From DEPOSIT Where CNAME LIKE '_U%';
+
+12. Retrieve all the records from the table DEPOSIT where branch name is CHANDNI or MGROAD:-
+--------------------------------------------------------------------------------------
+	
+	Query: Select * From DEPOSIT Where BNAME = 'MGROAD' OR BNAME = 'CHANDNI';
+
+13. Retrieve all the records from the table DEPOSIT where branch name is not CHANDNI or MGROAD:-
+--------------------------------------------------------------------------------------
+	
+	Query: Select * From DEPOSIT Where NOT BNAME = 'MGROAD' AND NOT BNAME = 'CHANDNI';
+
+13. Retrieve all the records from the table DEPOSIT where branch name is not CHANDNI or MGROAD:-
+--------------------------------------------------------------------------------------
+	
+	Query: Select * From DEPOSIT Where NOT BNAME = 'MGROAD' AND NOT BNAME = 'CHANDNI';
+
+14. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in ascending order:-
+----------------------------------------------------------------------------------------------------------------
+
+	Query: Select * From DEPOSIT Where AMOUNT > 1000 ORDER BY CNAME ASC;
+
+14. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in descending order:-
+----------------------------------------------------------------------------------------------------------------
+
+	Query: Select * From DEPOSIT Where AMOUNT > 1000 ORDER BY CNAME DESC;
+
+16. Retrieve customer details from BORROW table where the third character of the customer name is either ‘A’ or ‘D’:-
+---------------------------------------------------------------------------------------------------------------------
+
+	Query: Select * From BORROW Where CNAME LIKE '__A%' OR CNAME LIKE '__D%';
+
+17. Retrieve all the records from the table BORROW where amount is not between 2000 and 8000:-
+----------------------------------------------------------------------------------------------
+
+	Query: Select * From BORROW Where AMOUNT NOT Between 2000 AND 3000;
+
+18. Find out the unique records from the table DEPOSIT:-
+----------------------------------------------------------------------------------------------
+
+	Query: Select DISTINCT ACTNO,CNAME,BNAME,AMOUNT,ADATE From DEPOSIT;
+
+19. Update the amount of all depositors in deposit table by giving them 10% interest (i.e. amount=amount * 0.1) where branch is VRCE:-
+--------------------------------------------------------------------------------------------------------------------------------------
+
+	Query: Update DEPOSIT SET AMOUNT= AMOUNT + (AMOUNT*0.1) Where BNAME = 'VRCE';
+
+20. Update the amount of all depositors in deposit table by giving them 10% interest where branch is VRCE and customer name ANIL:-
+--------------------------------------------------------------------------------------------------------------------------------------
+
+	Query: Update DEPOSIT SET AMOUNT= AMOUNT + (AMOUNT*0.1) Where BNAME = 'VRCE' AND CNAME = 'ANIL';

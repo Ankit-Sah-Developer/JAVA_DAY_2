@@ -1,0 +1,62 @@
+** database contsweek;
+
+Create table STUIDENT and insert the following data :-
+------------------------------------------------------
+
+i) Create Table STUDENT(
+   NAME VARCHAR(20),
+   ROLLNO INT,
+   BRANCH VARCHAR(20),
+   CITY VARCHAR(20));
+
+ii) Insert Into STUDENT Values
+    ('VIJAYA',150,'CSE','CHENNAI'),
+    ('SITA',202,'ETC','KOLKATA'),
+    ('RAVI',300,'EEE','DELHI'),
+    ('BASU',165,'ETC','CHENNAI'),
+    ('RASMI',107,'ETC','RKL'),
+    ('KARAN',111,'CSE','CTC'),
+    ('REKHA',117,'BME','BBSR');
+
+
+1. Count the number of students of each department:-
+----------------------------------------------------
+	
+	Query: Select COUNT(ROLLNO) as num, BRANCH from Student Group By BRANCH;
+
+2. Count the number of students of each department where the department name starts with ‘E’:-
+----------------------------------------------------------------------------------------------
+	
+	Query: Select COUNT(ROLLNO) as num, BRANCH from Student Where BRANCH Like 'E%' Group By BRANCH;
+
+3. Add a field called MARKS to the table STUDENT which can hold a number upto 8 digit length:-
+----------------------------------------------------------------------------------------------
+	
+	Query: ALTER TABLE Student ADD MARKS int;
+
+4. Modify the field :”NAME” of the table STUDENT to hold a maximum of 25 character:-
+------------------------------------------------------------------------------------
+
+	Query: ALTER TABLE Student MODIFY NAME varchar(25);
+
+5. Delete all rows from the table STUDENT where branch is ETC:-
+---------------------------------------------------------------
+
+	Query: Delete from Student Where BRANCH = 'ETC';
+
+6. Rename the table STUDENT to STUDINFORMATION:-
+-------------------------------------------------
+
+	Query: RENAME TABLE Student TO STUDINFORMATION;
+
+7. Delete all the data part from the table STUDENT:-
+----------------------------------------------------
+
+	Query: TRUNCATE TABLE STUDINFORMATION;
+
+8. Destroy the table STUDENT:-
+------------------------------
+
+	Query: DROP TABLE STUDINFORMATION;
+
+	
