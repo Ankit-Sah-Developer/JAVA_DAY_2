@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sL" class="com.masai.calculatorapp.ServiceLayer" />
+	
+	<bean id="pL" class="com.masai.calculatorapp.PresentationLayer">
+		
+		<property name="service" ref="sL" />
+		
+	</bean>
+	
+	<bean id="bL" class="com.masai.beanclasslifecycle.BeanLife"  init-method="initialize" destroy-method="destroy">
+		
+		<property name="num" value="1001" />
+		
+	</bean>
+	
+	
+</beans>
