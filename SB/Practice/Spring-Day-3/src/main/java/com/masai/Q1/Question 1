@@ -1,0 +1,24 @@
+Q1. Explain the following Annotations:-
+
+
+a) @Service:- This the stereotype annotation in spring used to mark the class or 
+			  represent the class is from the service layer, where we can write the 
+			  business logic of our application.
+			  
+b) @component:- One of the type of stereotype annotation which is used represent the 
+				DAO classes or commonly used classes in our application, If don't know the class
+				belongs to which layer there also we can use this annotation.
+				  
+c) @Autowired:- The @Autowired annotation of spring is used to inject the object dependency implicitly
+				@Autowired is internally uses the setter and constructor methods for injecting the dependencies
+				it does not works with primitive data types and string values.
+				
+d) @Component Scan:- The @Component Scan annotation is used along with the configuration annotation  in the
+					 context/configuration class telling spring from where to scan annotated classes in the 
+					 package which from which base package.
+					 
+e) @Bean:- It is the method level annotation use to register the class to the spring container 
+		   we use the @Bean annotation over the method which return type should be the object then registered with the 
+		   container.
+		    
+f) @value:- It is use over the simple variable which provides the supply the dynamic value for the variables
