@@ -1,0 +1,22 @@
+a) What are the major dependencies that we add while creating SpringBoot projects? 
+	Also mention the purpose of each.
+	
+	1. Spring boot Stater web:-
+			When we want to develop the web application we have to add the web dependencies 
+			Spring boot Stater web uses Spring MVC, REST and Tomcat server internally
+			its use Servlet class and Servlet Dispachter which helps to validation of data;
+			
+	2. Maven Dependencies:- Maven basically use to create the Maven project and it helps 
+			to manage the various puglins required and filtration ;
+			
+	3. Spring boot test:- it is used to create and test the various test cases and enviroment
+	
+	4. Jackson dependency:-  It is used to map the java object to the JSON format and vice versa
+	
+	
+	
+	
+b) What is the difference between PathVariable and Requestparam annotations
+
+	Pathvariable is used for the URI values whereas the RequestParam used after URI for passing the 
+	parameters;

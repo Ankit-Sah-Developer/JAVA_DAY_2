@@ -1,0 +1,22 @@
+Q2 Explain MVC architecture with the help of Diagram.
+
+Diagram:-
+--------
+"src\main\java\com\masai\Q2\MVC Arch.png"
+
+Explain:-
+-------
+		MVC architecture is basically used to build the web application and to achive this 
+		MVC used the Model-Controller-View design pattern;
+		When the request is come from the client firstly the it goes through the servlet class 
+		in which servlet dispatcher will valid the data and update the data nad distributr the data 
+		to the following layers;
+		
+		Model layer:- In which the data of application is store in terms of the object or collection 
+					  of the object;
+		View Layer:- Contains the particular information in the format like JSP in general and used to create the 
+					 view page;
+					 
+		Controller Layer:- It is basically the business logic layer which anooted with @COntroller annotation
+						   it is medium between Model-View layer;
+		 

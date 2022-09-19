@@ -1,0 +1,17 @@
+Q3 What is the difference between SOAP-based Web Services and  Restful Web Services
+
+
+			SOAP-based Web services								Restful Web services 
+
+1. SOAP stands for the Simple Object Access           1. REST stands for Representational State 
+	Protocol  											 Transfer
+
+2. The web services using SOAp are very heavy   	  2. While Rest web services are very simple 
+   design and complex to design			  				 to design and Light design
+
+3. SOAP is the protocol based web services			  3. Whereas the REST is architectural pattern based
+
+4. SOAP web services supports only .xml format		  4. where as the REST supports the JSON,.xml,HtML, etc;
+
+5. SOAP based web services communicates with 		  5. where communicate with HTTP protocol with the predefined 
+   server using XML massage								 methods like GET,POST,DELETE,PUT,etc.

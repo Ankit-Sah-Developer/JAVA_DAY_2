@@ -1,0 +1,33 @@
+Q5 
+a) What is Lazy loading and Eager Loading. Why are they used? Explain with examples.
+	
+	Lazy loading:- It is related to the object initialization, It is basically initialize 
+				   the object whenever it required. 
+	
+	Ex:-	
+	@Lazy		   
+	@Service	   
+	public class A{
+	
+	
+	}
+	
+	Eager Loading:- It is pre-loading of the object in at the time of parent object initialization.
+
+
+b)What is auto-wiring ? What are the ways with which you can configure auto-wiring in spring?
+
+	AutoWiring:-
+	  It is the annotation or feature of spring which inject the object dependencies implicitly
+	  Internally it uses the setter injection or construction injection
+	  
+	Ways of AutoWiring:-
+	
+		"byName":- It uses the injection based on the names, it looks for the bean name matching
+				   in the configuration file and its autowired via setter injection.
+		
+		"byType":- It uses the injection based on the bean object type,
+		           if we didn't mention the name implicitly it looks by the type in configuration file
+		           and if found it inject the bean;
+		           
+		"constructor" :- it looks for the constructor with type or non-type arguments   
