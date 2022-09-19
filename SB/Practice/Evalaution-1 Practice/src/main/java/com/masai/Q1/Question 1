@@ -1,0 +1,26 @@
+Q 1. What is a Circular Dependency problem?And how we can resolve it Demonstrate by
+	 creating a spring project;
+	 
+Answer:-
+--------
+	 When we use the case where two bean objects are depended on each other and we use the 
+	 "Constructor-injection" it will caused the ambiguity problem.
+	 When the spring IOC tries to load the all the bean class. It will try to find the dependencies
+	 and try to create the object of bean class according to that..
+	 ex. if we have 3 beans like A, B and C where A depend on B, B depend on C and c is independent
+	 	 IOC will first create the C object and then create B object injecting the C in to it and further
+	 	 A object will be created and B object injected into A object;
+	 But in Circular Dependencies IOC Spring IOC not able to decide which object is to be create first;
+	 
+	 It is basically caused due to constructor injection to avoid or resolve such condition we have to use:
+	 
+	 "Setter Injection": In this case when we use the setter-injection IOC create the bean class but not inject the dependencies
+	 until it required so on dependency problem will occur
+	 
+	 OR
+	 
+	 "@Lazy" annotation: With this annotation it simply initialize the bean object lazily which breaks the 
+	 circular dependency cycle. ex we apply @Lazy at one object "A" which depend on "B" and "B" also depend on "A"
+	 when IOC encounter with A object it take time to initialize but when encounters with B it will create the B object 
+	 and solve the problem   
+	   

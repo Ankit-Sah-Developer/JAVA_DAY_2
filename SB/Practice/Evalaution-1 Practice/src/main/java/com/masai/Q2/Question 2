@@ -1,0 +1,23 @@
+Q2 Explain 4 stereotype annotations present.
+
+Answer:-
+--------
+	There are four Stereotype Annotations-
+	1. @Component
+	2. @Service
+	3. @Repository
+	4. @Controller
+	
+	1.@Component:- It is the annotation we used to marks the DAO classes which are commonly use by other classes 
+	               and does not part of any layer basically it is the super annotation  of the other annotation 
+	               @service, @Repository and @ Controller;
+	
+	2.@Service:- This the specialize annotation of the component which represent that the class having @service 
+				 annotation is belongs to the service layer then it is easy to differentiate the classes into service layer;
+				 
+	3.@Repository:- This is basically use on the Data-Access Layer which represents that the class belongs to the data access layer
+				 	where all the data access logic is written.
+				 
+	4. @Controller:- The Controller annotation denotes that the current class is controller of this Layer which responsible to handle 
+				 	 all the logic in one place/class   
+					
