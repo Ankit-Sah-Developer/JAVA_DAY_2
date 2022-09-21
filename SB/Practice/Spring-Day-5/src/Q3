@@ -1,0 +1,13 @@
+What are servlets ?
+-------------------
+	Servlets are the JAVA programming language claas which is basically use to handle the
+	request-response from the servers programming module.The servlet container is the part of 
+	web server which can be run in a separate process. In which we can manage data validation
+	we can create the presentation logic on the client side  
+	
+	
+What is the role of request Dispatcher Servlet?
+-----------------------------------------------
+	The DispatcherServlet is the front controller in Spring web applications. It's used to create 
+	web applications and REST services in Spring MVC. In a traditional Spring web application, this 
+	servlet is defined in the web. xml.

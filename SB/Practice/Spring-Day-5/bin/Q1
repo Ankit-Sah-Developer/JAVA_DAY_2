@@ -1,0 +1,19 @@
+Q1. Explain MVC architecture?
+
+MVC Architecture:-
+------------------
+		MVC is basically the web application development patter form which we develope the
+		web application
+		where M stands for Model, V stands for View and C stands for controller
+		
+		Model -  where all the data related logic is perform like Service layer and Data access layer
+				 which perform the operation on the input from the client and gives the response to 
+				 the client.
+		View  -  Basically it generates and present the data which are send by the controller in the 
+		         form of the JSp etc.
+		Controller -  it is the first layer in the MVC architecture which is responsible for the 
+					passing the input from the client to the Model i.e Service layer and Data Access layer
+					and getting the response from them and pass on to the client which basilcally done in the
+					Serlvet class.
+					
+		Serlvet class basically responsible for the capturing the data and validating the data from user

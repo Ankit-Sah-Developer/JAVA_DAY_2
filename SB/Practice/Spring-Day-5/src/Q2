@@ -1,0 +1,10 @@
+Q2. What is the difference between SOAP and Rest API's?
+
+					SOAP 										REST API's
+	1. The SOPA is Simple Object Access Protocol    1. REST (Representational State Transfer)
+	2. The SOAP is the protocol bases on the xml	2. It is the not based on State transfer architectural style
+	3. it creates a very heavy wieght application	3. It is used to create the ligth wieght s/w
+	4. It is secure than the REST API use to build	4. Its less secure than SOAP it uses to expose the data 
+		Baking application as its uses the SSL 			with HTTP and HTTPS protocols
+		support, WS-Security
+	5. It only shows data in XML format				5. it shows the data in the xml.txt.JSON etc.
