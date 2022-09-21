@@ -1,0 +1,11 @@
+Q1. What is the Difference between Web Application and Web-services?
+
+					Web Application										Web Services
+	1. A application which access or used by the		1. Where Web service is the service on the system
+	   user through the internet over any web 			   which allows access/interact two machine over the 
+	   browser application								   internet
+	2. A web application have the dynamic user			2. where as the web services contains/generates the raw
+	   interface like Dynamic HTML pages and 			   data that can be use or access by any web application
+	   static pages										   in the form of XML files, JSON format
+	3. Web applications are not meat to be reuse		3. where as the web services are meant to be reusable by
+	   means for single purpose							   different kinds of applications

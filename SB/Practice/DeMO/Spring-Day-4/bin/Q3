@@ -1,0 +1,32 @@
+Q3. Explain http request structure, Alos explain what are headers in http request.
+
+
+HTTP request structure:-
+----------------------
+
+	Http request is the massage created by the client to the server which contains following elements:-
+	
+	1. Initial Request Line:- i.   it contains the Http methods like GET,POST,DELETE,PUT etc. 
+							  ii.  uniform resource identifier i.e URI the resource upon which to apply 
+							  	   the request
+							  iii. http version which we are using
+	2. Request Header 	   :- Basically request headers are the key-value pairs which contains the additional
+							  information about the request like content-type, Host, USer etc.
+	3. Request Body        :- the data we are sending to client in the form of the form data, JSON data
+	
+
+HTTP Headers:-
+--------------
+	The request-header allow the client to pass additional information about the request, 
+	and about the client itself to the server. 
+	Request headers contains the 
+	Request methods - GET,POST
+	Date-time - time and date on which request is generated
+	Host - it is the IP address of th client from which system we getting the request
+	USer-agent - 
+	Content-type - which means in which form data is coming like JSON data,txt,xml,etc
+	language
+	 
+						       
+							 
+							 

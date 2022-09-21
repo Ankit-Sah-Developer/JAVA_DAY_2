@@ -1,0 +1,12 @@
+Q2.Difference between static and dynamic web-pages
+
+
+				Static Web-pages								Dynamic Web-pages
+   1. Static pages are those which are remains same		1. Where as the dynamic pages are capable to    
+   	  for the time until ones change it					   change the content dynamically for different users
+   2. Static web pages are not use data connections		2. Dynamic web pages are depend on the user input 
+   	  they are static HTML pages, Images, etc			   and creates the request to the and displays the 
+   	  													   response accordingly 
+   3. Static web pages generate by the static web		3. Dynamic web pages generate by the dynamic web
+   	  resources											   resources
+   	 
